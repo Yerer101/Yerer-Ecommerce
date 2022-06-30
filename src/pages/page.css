@@ -1,5 +1,21 @@
-.home-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+/* Home css */
+.images-container {
+  display: none;
+}
+
+@media only screen and (min-width: 890px) {
+  .home-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+  }
+
+  .images-container {
+    display: block;
+    margin: 8px;
+  }
+  .image-size {
+    width: 100%;
+    height: 450px;
+    object-fit: contain;
+  }
 }

@@ -1,8 +1,9 @@
 import React from "react";
 import "../css/w3.css";
+import "./page.css";
 import Topnav from "../component/Topnav/Topnav";
 import Register from "../component/Register/Register";
-import images from "../assets/ecommerce.jpg";
+import images from "../assets/ecommerce3.jpg";
 
 export const Home = () => {
   return (
@@ -11,11 +12,9 @@ export const Home = () => {
         <Topnav />
       </div>
       <div className="home-container">
-        <div>
-          <Register />
-        </div>
-        <div>
-          <img src={images} alt="Logo" />
+        <Register />
+        <div className="images-container">
+          <img src={images} alt="Logo" className="image-size" />
         </div>
       </div>
     </div>
