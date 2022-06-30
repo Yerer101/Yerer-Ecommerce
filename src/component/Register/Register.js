@@ -39,9 +39,9 @@ const Register = () => {
         />
         <input
           type="submit"
-          value="Sign Up"
+          value="Sign-Up"
           onClick={verifiably}
-          className="w3-button w3-round w3-hover-black signup-btn"
+          className="w3-btn w3-round w3-hover-black signup-btn"
         />
       </form>
     </div>
