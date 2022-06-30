@@ -1,0 +1,30 @@
+.register-container {
+  /* display: flex;
+  flex-direction: column; */
+  margin: 0 20px;
+  /* border: 1px solid red; */
+  /* justify-content: flex-end; */
+}
+
+.form-input {
+  padding: 9px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: white;
+  border: 1px solid lightblue;
+}
+
+.form-header {
+  font-size: 30px;
+}
+
+.signup-btn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+@media only screen and (min-width: 580px) {
+  .register-container {
+    width: 468px;
+  }
+}

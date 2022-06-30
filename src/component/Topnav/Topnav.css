@@ -1,0 +1,17 @@
+.login-container {
+  margin: -3px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.forgotpassword-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.forgot-password {
+  grid-column-start: -1;
+  cursor: pointer;
+  color: rgb(47, 0, 255);
+  margin-top: 3px;
+  padding-right: 8px;
+}

@@ -1,0 +1,29 @@
+.header-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 10px;
+  align-items: center;
+  justify-items: end;
+  color: var(--ye-text);
+  background: var(--ye-back);
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
+}
+
+.header-logo {
+  color: red;
+}
+
+.header-tx {
+  font-size: 13px;
+  letter-spacing: 3px;
+}
+
+@media only screen and (max-width: 600px) {
+  .header-logo {
+    text-align: center;
+  }
+  .header-tx {
+    display: none;
+  }
+}

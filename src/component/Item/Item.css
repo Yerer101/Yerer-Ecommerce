@@ -1,0 +1,13 @@
+.test {
+	padding: 20px;
+	margin: 20px;
+}
+
+#mySidebar{
+	width:250px;
+}
+
+.dropdown-toggle:hover{
+	color: red;
+	background-color: black;
+}

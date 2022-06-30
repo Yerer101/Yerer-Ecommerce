@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo-img {
+  margin-bottom: -1px;
+  margin-top: 6px;
+}
+
+.w3-theme {
+  color: black !important;
+  background-color: white !important;
+}
+
+.w3-btn {
+  background-color: #4caf50;
+  margin-bottom: 4px;
+}
+
+.w3-code {
+  border-left: 4px solid #4caf50;
+}
+
+.myMenu {
+  margin-bottom: 150px;
+}
+.w3-mycolor,
+.w3-hover-mycolor:hover {
+  color: white !important;
+  background-color: #004466 !important;
+}
+
+.w3-myfont {
+  font-family: "Comic Sans MS", cursive, sans-serif !important;
+}
+
+.index {
+  z-index: 1;
+}

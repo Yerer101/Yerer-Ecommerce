@@ -1,0 +1,17 @@
+:root {
+  --ye-back: #004466;
+  --ye-text: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* body {
+  background-color: var(--ye-back);
+} */
+
+.layout-container{
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
