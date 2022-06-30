@@ -1,9 +1,5 @@
 .register-container {
-  /* display: flex;
-  flex-direction: column; */
   margin: 0 20px;
-  /* border: 1px solid red; */
-  /* justify-content: flex-end; */
 }
 
 .form-input {
@@ -21,6 +17,8 @@
 .signup-btn {
   width: 100%;
   margin-top: 10px;
+  color: var(--ye-text);
+  background-color: var(--ye-back);
 }
 
 @media only screen and (min-width: 580px) {

@@ -37,7 +37,7 @@ export default function Login() {
             <input
               type="submit"
               value="Log-In"
-              className="w3-btn w3-round w3-mycolor w3-hover-black login"
+              className="w3-btn w3-round w3-hover-black login"
             />
           </div>
         </div>

@@ -29,7 +29,8 @@
 }
 .login > :only-child {
   width: 100%;
-  color: var(--ye-back);
+  color: var(--ye-text);
+  background-color: var(--ye-back);
   padding: 7px;
   margin-top: 3px;
 }
