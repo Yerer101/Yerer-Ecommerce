@@ -1,64 +1,62 @@
 import React from "react";
 import "./Login.css";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
-import LoginTemplate from "./LoginTemplate";
-
-// User Login info
-const database = [
-  {
-    username: "user1",
-    password: "pass1",
-  },
-  {
-    username: "user2",
-    password: "pass2",
-  },
-];
-
-const errors = {
-  uname: "invalid username",
-  pass: "invalid password",
-};
 
 export default function Login() {
-  const { register, handleSubmit, reset } = useForm();
-  const [errorMessages, setErrorMessages] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const { register, handleSubmit, errors, reset } = useForm();
+
+  // User Login info
+  const database = [
+    {
+      username: "user1",
+      password: "pass1",
+    },
+    {
+      username: "user2",
+      password: "pass2",
+    },
+  ];
 
   const onSubmit = (data) => {
-    // data.preventDefault();
-    alert(JSON.stringify(data));
-    reset();
-  };
+    const userData = database.find((user) => user.username === data.username);
+    console.log(data);
 
-  // Generate JSX code for error message
-  const renderErrorMessage = (name) =>
-    name === errorMessages.name && (
-      <div className="error">{errorMessages.message}</div>
-    );
+    // Compare user info
+    if (userData) {
+      if (userData.password !== data.password) {
+        // Invalid password
+        alert("Wrong Password");
+      } else {
+        alert(`Succefuly Loged-In, Welcome ${data.username}`);
+        reset();
+      }
+    } else {
+      // Username not found
+      alert("User Name not Found");
+    }
+  };
 
   return (
     <div className="container">
       <form onSubmit={handleSubmit(onSubmit)} className="input-container ">
         <div className="form">
           <div className="input-userName">
-            <LoginTemplate
+            <input
               type="text"
-              name="userName"
+              name="username"
+              className="w3-light-grey"
               placeholder="User Name"
-              register={register}
+              ref={register}
             />
-            {renderErrorMessage("userName")}
           </div>
           <div className="input-password">
-            <LoginTemplate
+            <input
               type="password"
               name="password"
+              className="w3-light-grey "
               placeholder="Password"
-              register={register}
+              ref={register}
             />
-            {renderErrorMessage("password")}
           </div>
           <div className="login">
             <input
@@ -69,6 +67,40 @@ export default function Login() {
           </div>
         </div>
       </form>
+      {/* <LoginTemplate
+              type="text"
+              name="userName"
+              placeholder="User Name"
+              register={register}
+            /> */}
+      {/* <LoginTemplate
+              type="password"
+              name="password"
+              placeholder="Password"
+              register={register}
+            /> */}
+      {/* <div className="input-userName">
+            <input
+              type="text/number"
+              name="userName"
+              placeholder="User Name"
+              className="w3-light-grey w3-round"
+              autoComplete="off"
+              ref={register}
+              required
+            />
+          </div>
+          <div className="input-password">
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              className="w3-light-grey "
+              autoComplete="off"
+              ref={register({ minLength: 8 })}
+              required
+            />
+          </div> */}
     </div>
   );
 }

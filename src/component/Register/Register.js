@@ -26,7 +26,7 @@ const Register = () => {
         <RegisterTemplate
           label="Your Mobile Number"
           type="text"
-          name="phone number"
+          name="phoneNumber"
           placeholder="Phone Number"
           register={register}
         />
