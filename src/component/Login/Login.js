@@ -1,17 +1,42 @@
 import React from "react";
 import "./Login.css";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 import LoginTemplate from "./LoginTemplate";
+
+// User Login info
+const database = [
+  {
+    username: "user1",
+    password: "pass1",
+  },
+  {
+    username: "user2",
+    password: "pass2",
+  },
+];
+
+const errors = {
+  uname: "invalid username",
+  pass: "invalid password",
+};
 
 export default function Login() {
   const { register, handleSubmit, reset } = useForm();
+  const [errorMessages, setErrorMessages] = useState({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const onSubmit = (data) => {
-    console.log(data);
-    // alert(JSON.stringify(data))
-    // e.target.reset()
+    // data.preventDefault();
+    alert(JSON.stringify(data));
     reset();
   };
+
+  // Generate JSX code for error message
+  const renderErrorMessage = (name) =>
+    name === errorMessages.name && (
+      <div className="error">{errorMessages.message}</div>
+    );
 
   return (
     <div className="container">
@@ -24,6 +49,7 @@ export default function Login() {
               placeholder="User Name"
               register={register}
             />
+            {renderErrorMessage("userName")}
           </div>
           <div className="input-password">
             <LoginTemplate
@@ -32,6 +58,7 @@ export default function Login() {
               placeholder="Password"
               register={register}
             />
+            {renderErrorMessage("password")}
           </div>
           <div className="login">
             <input
