@@ -1,12 +1,9 @@
-import React from "react"
-import Navbar from "../component/Navbar/Navbar"
-// import ItemList from '../component/ItemList/ItemList';
-// import ShopingList from "../component/ShopingList/ShopingList"
+import React from "react";
+import { Redirect } from "react-router-dom";
 
-export const Sale = () => {
-  return (
-    <div>
-      <Navbar />
-    </div>
-  )
-}
+export const Sale = ({ autoried }) => {
+  if (!autoried) {
+    return <Redirect to="/" />;
+  }
+  return <div>Sale</div>;
+};
