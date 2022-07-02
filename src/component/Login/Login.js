@@ -70,6 +70,9 @@ export default function Login() {
               placeholder="User Name"
               register={register}
             /> 
+            <Link to="/" >
+              
+            </Link>
       */}
       {/* <LoginTemplate
               type="password"
