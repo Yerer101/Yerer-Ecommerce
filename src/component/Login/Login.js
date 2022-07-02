@@ -1,6 +1,7 @@
 import React from "react";
 import "./Login.css";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const { register, handleSubmit, errors, reset } = useForm();
@@ -8,12 +9,8 @@ export default function Login() {
   // User Login info
   const database = [
     {
-      username: "user1",
-      password: "pass1",
-    },
-    {
-      username: "user2",
-      password: "pass2",
+      username: "abraham",
+      password: "123",
     },
   ];
 
@@ -72,7 +69,8 @@ export default function Login() {
               name="userName"
               placeholder="User Name"
               register={register}
-            /> */}
+            /> 
+      */}
       {/* <LoginTemplate
               type="password"
               name="password"
