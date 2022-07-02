@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Login.css";
 import { useForm } from "react-hook-form";
-// import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const { register, handleSubmit, errors, reset } = useForm();
@@ -16,14 +16,19 @@ export default function Login() {
 
   const onSubmit = (data) => {
     const userData = database.find((user) => user.username === data.username);
+    console.log(data);
 
+    // Compare user info
     if (userData) {
       if (userData.password !== data.password) {
+        // Invalid password
         alert("Wrong Password");
       } else {
         alert(`Succefuly Loged-In, Welcome ${data.username}`);
+        reset();
       }
     } else {
+      // Username not found
       alert("User Name not Found");
     }
   };
@@ -51,21 +56,14 @@ export default function Login() {
             />
           </div>
           <div className="login">
-            {/* <input
+            <input
               type="submit"
               value="Log-In"
               className="w3-btn w3-round w3-hover-black login"
-            /> */}
-            <button
-              type="submit"
-              value="Log-In"
-              className="w3-btn w3-round w3-hover-black login"
-            ></button>
+            />
           </div>
         </div>
       </form>
-
-      {/* <div>{!logIn ? "Error with your account" : navigate("/Sale")}</div> */}
       {/* <LoginTemplate
               type="text"
               name="userName"
@@ -73,7 +71,7 @@ export default function Login() {
               register={register}
             /> 
             <Link to="/" >
-
+              
             </Link>
       */}
       {/* <LoginTemplate
