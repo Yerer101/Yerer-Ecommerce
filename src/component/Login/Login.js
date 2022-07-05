@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Login.css";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 export default function Login() {
   const { register, handleSubmit, errors, reset } = useForm();
+  const [isLoggedIn, setLoggedIn] = useState(false);
 
   // User Login info
   const database = [
     {
       username: "abraham",
-      password: "123",
+      password: "1",
     },
   ];
 
@@ -25,6 +26,7 @@ export default function Login() {
         alert("Wrong Password");
       } else {
         alert(`Succefuly Loged-In, Welcome ${data.username}`);
+        setLoggedIn(true);
         reset();
       }
     } else {
@@ -33,7 +35,9 @@ export default function Login() {
     }
   };
 
-  return (
+  return isLoggedIn ? (
+    <Navigate to="/sale" />
+  ) : (
     <div className="container">
       <form onSubmit={handleSubmit(onSubmit)} className="input-container ">
         <div className="form">
