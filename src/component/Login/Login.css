@@ -27,7 +27,7 @@
   border-radius: 4px;
 }
 
-.login > :only-child {
+.login> :only-child {
   width: 100%;
   color: var(--ye-text);
   background-color: var(--ye-back);
@@ -44,16 +44,18 @@
     height: 42px;
   }
 
-  .form > div {
+  .form>div {
     margin-right: 8px;
   }
 
   .input-userName {
     width: 190px;
   }
+
   .input-password {
     width: 190px;
   }
+
   .login {
     width: 90px;
     margin: 1px;

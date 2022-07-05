@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./Login.css";
 import { useForm } from "react-hook-form";
-import { Link, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 
 export default function Login() {
-  const { register, handleSubmit, errors, reset } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const [isLoggedIn, setLoggedIn] = useState(false);
 
   // User Login info
@@ -68,44 +68,6 @@ export default function Login() {
           </div>
         </div>
       </form>
-      {/* <LoginTemplate
-              type="text"
-              name="userName"
-              placeholder="User Name"
-              register={register}
-            /> 
-            <Link to="/" >
-              
-            </Link>
-      */}
-      {/* <LoginTemplate
-              type="password"
-              name="password"
-              placeholder="Password"
-              register={register}
-            /> */}
-      {/* <div className="input-userName">
-            <input
-              type="text/number"
-              name="userName"
-              placeholder="User Name"
-              className="w3-light-grey w3-round"
-              autoComplete="off"
-              ref={register}
-              required
-            />
-          </div>
-          <div className="input-password">
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              className="w3-light-grey "
-              autoComplete="off"
-              ref={register({ minLength: 8 })}
-              required
-            />
-          </div> */}
     </div>
   );
 }
