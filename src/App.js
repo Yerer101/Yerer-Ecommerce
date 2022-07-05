@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Buy } from "./pages/Buy";
@@ -12,9 +13,9 @@ class App extends Component {
       <Layout>
         <React.Fragment>
           <Routes>
-            <Route path="/" element={<Buy />} />
-            <Route path="/sale" element={<Sale />} />
-            <Route path="/Home" element={<Home />} />
+            <Route path="/Buy" element={<Buy />} />
+            <Route path="/Sale" element={<Sale />} />
+            <Route path="/" element={<Home />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </React.Fragment>

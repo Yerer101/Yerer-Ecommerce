@@ -2,21 +2,17 @@ import React, { useState } from "react";
 import "./Login.css";
 import { useForm } from "react-hook-form";
 import { Navigate } from "react-router-dom";
+import Navbar from "../../hoc/Navbar/Navbar";
+import user from "../database";
 
 export default function Login() {
   const { register, handleSubmit, reset } = useForm();
   const [isLoggedIn, setLoggedIn] = useState(false);
 
   // User Login info
-  const database = [
-    {
-      username: "abraham",
-      password: "1",
-    },
-  ];
 
   const onSubmit = (data) => {
-    const userData = database.find((user) => user.username === data.username);
+    const userData = user.find((user) => user.username === data.username);
     console.log(data);
 
     // Compare user info
@@ -38,7 +34,7 @@ export default function Login() {
   return isLoggedIn ? (
     <Navigate to="sale" />
   ) : (
-    <div className="container">
+    <Navbar>
       <form onSubmit={handleSubmit(onSubmit)} className="input-container ">
         <div className="form">
           <div className="input-userName">
@@ -68,6 +64,6 @@ export default function Login() {
           </div>
         </div>
       </form>
-    </div>
+    </Navbar>
   );
 }

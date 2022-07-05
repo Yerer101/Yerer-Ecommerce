@@ -10,6 +10,9 @@ const Register = () => {
       .required("Username is required")
       .min(6, "Username must be at least 6 characters")
       .max(20, "Username must not exceed 20 characters"),
+    phoneNumber: Yup.string()
+      .required("Phone Number is required")
+      .min(10, "Phone Number must be 10 digits"),
     password: Yup.string()
       .required("Password is required")
       .min(6, "Password must be at least 6 characters")
@@ -50,7 +53,9 @@ const Register = () => {
               errors.username ? "is-invalid" : ""
             }`}
           />
-          <div className="invalid-feedback">{errors.username?.message}</div>
+          <div className="invalid-feedback float-right">
+            {errors.username?.message}
+          </div>
         </div>
 
         <div>

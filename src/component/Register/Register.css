@@ -2,6 +2,10 @@
   margin: 0 20px;
 }
 
+label {
+  margin-top: 8px;
+}
+
 .form-input {
   padding: 9px;
   width: 100%;
@@ -12,6 +16,7 @@
 
 .form-header {
   font-size: 30px;
+  text-align: center;
 }
 
 .signup-btn {
@@ -21,8 +26,14 @@
   background-color: var(--ye-back);
 }
 
+/* div>.invalid-feedback {} */
+
 @media only screen and (min-width: 580px) {
   .register-container {
     width: 468px;
+  }
+
+  .form-header {
+    font-size: 30px;
   }
 }
