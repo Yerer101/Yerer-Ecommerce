@@ -36,7 +36,7 @@ export default function Login() {
   };
 
   return isLoggedIn ? (
-    <Navigate to="/sale" />
+    <Navigate to="sale" />
   ) : (
     <div className="container">
       <form onSubmit={handleSubmit(onSubmit)} className="input-container ">
@@ -47,7 +47,7 @@ export default function Login() {
               name="username"
               className="w3-light-grey"
               placeholder="User Name"
-              ref={register}
+              {...register("username")}
             />
           </div>
           <div className="input-password">
@@ -56,7 +56,7 @@ export default function Login() {
               name="password"
               className="w3-light-grey "
               placeholder="Password"
-              ref={register}
+              {...register("password")}
             />
           </div>
           <div className="login">
