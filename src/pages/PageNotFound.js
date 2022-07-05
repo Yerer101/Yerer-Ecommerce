@@ -1,6 +1,6 @@
 import React from "react";
 
-export const NotFound = () => (
+export const PageNotFound = () => (
   <div>
     <h1>
       <span className="w3-margin">404</span> PAGE NOT FOUND
