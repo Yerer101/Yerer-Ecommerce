@@ -1,7 +1,7 @@
 import React from "react";
 import "./Register.css";
-import * as Yup from "yup";
 import { useForm } from "react-hook-form";
+import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 const Register = () => {
@@ -104,8 +104,7 @@ const Register = () => {
 
         <button
           type="submit"
-          value="Sign-Up"
-          className="w3-btn w3-round w3-hover-black signup-btn"
+          className="w3-btn w3-round w3-hover-black btn-signup"
         >
           Register
         </button>

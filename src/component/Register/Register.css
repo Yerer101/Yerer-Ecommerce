@@ -19,14 +19,13 @@ label {
   text-align: center;
 }
 
-.signup-btn {
+.btn-signup {
   width: 100%;
-  margin-top: 10px;
+  margin: 10px 0;
+  padding: 7px;
   color: var(--ye-text);
   background-color: var(--ye-back);
 }
-
-/* div>.invalid-feedback {} */
 
 @media only screen and (min-width: 580px) {
   .register-container {

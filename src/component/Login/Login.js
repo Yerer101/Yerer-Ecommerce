@@ -1,16 +1,27 @@
 import React, { useState } from "react";
 import "./Login.css";
+import * as Yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { Navigate } from "react-router-dom";
 import Navbar from "../../hoc/Navbar/Navbar";
 import user from "../database";
 
 export default function Login() {
-  const { register, handleSubmit, reset } = useForm();
+  const validationSchema = Yup.object().shape({
+    username: Yup.string().required("Username is required"),
+    password: Yup.string().required("Password is required"),
+  });
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(validationSchema) });
+
   const [isLoggedIn, setLoggedIn] = useState(false);
 
   // User Login info
-
   const onSubmit = (data) => {
     const userData = user.find((user) => user.username === data.username);
     console.log(data);
@@ -41,18 +52,20 @@ export default function Login() {
             <input
               type="text"
               name="username"
-              className="w3-light-grey"
               placeholder="User Name"
               {...register("username")}
+              className="w3-light-grey"
+              required
             />
           </div>
           <div className="input-password">
             <input
               type="password"
               name="password"
-              className="w3-light-grey "
               placeholder="Password"
               {...register("password")}
+              className="w3-light-grey"
+              required
             />
           </div>
           <div className="login">
