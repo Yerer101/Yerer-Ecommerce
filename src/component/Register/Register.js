@@ -102,7 +102,7 @@ const Register = () => {
           value="Sign-Up"
           className="w3-btn w3-round w3-hover-black signup-btn"
         >
-          Register
+          Sign-Up
         </button>
 
         {/* <input
