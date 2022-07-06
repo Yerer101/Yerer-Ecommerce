@@ -7,7 +7,7 @@ import { Sale } from "./pages/Sale";
 import { Verifier } from "./pages/Verifier";
 import { PageNotFound } from "./pages/PageNotFound";
 import Layout from "../src/hoc/Layout/Layout";
-// import ProtectedRoutes from "./ProtectedRoutes";
+import ProtectedRoutes from "./ProtectedRoutes";
 
 class App extends Component {
   render() {
@@ -15,9 +15,10 @@ class App extends Component {
       <Layout>
         <React.Fragment>
           <Routes>
-            {/* <Route element={<ProtectedRoutes />}></Route> */}
-            <Route path="/Sale" element={<Sale />} />
-            <Route path="/Verifier" element={<Verifier />} />
+            <Route element={<ProtectedRoutes />}>
+              <Route path="/Sale" element={<Sale />} />
+              <Route path="/Verifier" element={<Verifier />} />
+            </Route>
             <Route path="/Buy" element={<Buy />} />
             <Route path="/" element={<Home />} />
             <Route path="*" element={<PageNotFound />} />

@@ -8,7 +8,7 @@ import Navbar from "../../hoc/Navbar/Navbar";
 import user from "../database";
 // import ProtectedRoutes from "../../ProtectedRoutes";
 
-export default function Login() {
+const Login = (props) => {
   const validationSchema = Yup.object().shape({
     username: Yup.string().required("Username is required"),
     password: Yup.string().required("Password is required"),
@@ -80,4 +80,6 @@ export default function Login() {
       </form>
     </Navbar>
   );
-}
+};
+
+export default Login;

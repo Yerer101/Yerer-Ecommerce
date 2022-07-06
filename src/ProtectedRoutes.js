@@ -3,6 +3,7 @@ import { Navigate, Outlet } from "react-router-dom";
 
 const useAuth = () => {
   const user = { loggedIn: false };
+  // const { user } = useContext(UserContext);
   return user && user.loggedIn;
 };
 
