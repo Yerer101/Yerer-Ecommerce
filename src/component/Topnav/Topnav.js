@@ -1,23 +1,21 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import "./Topnav.css";
+import { Link } from "react-router-dom";
 import Login from "../Login/Login";
 
-class Topnav extends Component {
-  forgotPassword = () => (
+const Topnav = (props) => {
+  const forgotPassword = () => (
     <div className="forgot-password">
       <Link to="/">Forgot my password</Link>
     </div>
   );
 
-  render() {
-    return (
-      <div>
-        <Login />
-        <div className="forgotpassword-container">{this.forgotPassword()}</div>
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <Login value {...props} />
+      <div className="forgotpassword-container">{forgotPassword()}</div>
+    </div>
+  );
+};
 
 export default Topnav;

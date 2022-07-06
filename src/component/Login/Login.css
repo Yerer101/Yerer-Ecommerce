@@ -1,14 +1,9 @@
-.container {
-  padding-bottom: 3px;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
 .form {
-  padding: 0 9px;
+  padding: 0 10px;
 }
 
 .form :only-child {
-  margin-top: 4.6px;
+  margin-top: 5px;
 }
 
 .input-userName input {
@@ -41,7 +36,6 @@
     flex-direction: row;
     justify-content: flex-end;
     padding: 0;
-    height: 42px;
   }
 
   .form>div {
@@ -58,6 +52,6 @@
 
   .login {
     width: 90px;
-    margin: 1px;
+    margin-top: 2px;
   }
 }

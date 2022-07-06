@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Register.css";
-import * as Yup from "yup";
 import { useForm } from "react-hook-form";
+import { Navigate } from "react-router-dom";
+
+import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 const Register = () => {
@@ -10,6 +12,9 @@ const Register = () => {
       .required("Username is required")
       .min(6, "Username must be at least 6 characters")
       .max(20, "Username must not exceed 20 characters"),
+    phoneNumber: Yup.string()
+      .required("Phone Number is required")
+      .min(10, "Phone Number must be 10 digits"),
     password: Yup.string()
       .required("Password is required")
       .min(6, "Password must be at least 6 characters")
@@ -28,12 +33,17 @@ const Register = () => {
     resolver: yupResolver(validationSchema),
   });
 
+  const [filledIn, setFilledIn] = useState(false);
+
   const onSubmit = (data) => {
     console.log(JSON.stringify(data, null, 2));
+    setFilledIn(true);
     reset();
   };
 
-  return (
+  return filledIn ? (
+    <Navigate to="/verifier" />
+  ) : (
     <div className="register-container">
       <div>
         <h1 className="form-header">Create An Account</h1>
@@ -50,7 +60,9 @@ const Register = () => {
               errors.username ? "is-invalid" : ""
             }`}
           />
-          <div className="invalid-feedback">{errors.username?.message}</div>
+          <div className="invalid-feedback float-right">
+            {errors.username?.message}
+          </div>
         </div>
 
         <div>
@@ -99,8 +111,7 @@ const Register = () => {
 
         <button
           type="submit"
-          value="Sign-Up"
-          className="w3-btn w3-round w3-hover-black signup-btn"
+          className="w3-btn w3-round w3-hover-black btn-signup"
         >
           Sign-Up
         </button>
