@@ -1,0 +1,55 @@
+/* buy page*/
+.nav-container {
+    display: flex;
+}
+
+.btn-sell {
+    color: var(--ye-text);
+    background-color: var(--ye-back);
+    margin-top: 5px;
+    margin-right: 8px;
+    margin-bottom: 3px;
+    margin-left: 8px;
+    border-radius: 4px;
+    border: none;
+    display: inline-block;
+    outline: 0;
+    padding: 6px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none !important;
+    margin-left: auto;
+    order: 2;
+}
+
+.btn-sell:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgb(0, 0, 0)
+}
+
+.images {
+    width: 30px;
+    margin: 0 8px;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.itemlist-container {
+    display: none;
+}
+
+.show {
+    display: inline;
+}
+
+
+@media only screen and (min-width: 1024px) {
+    .itemlist-container {
+        display: inline;
+    }
+
+    .lines {
+        display: none;
+    }
+}

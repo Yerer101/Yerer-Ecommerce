@@ -1,0 +1,38 @@
+.ul-container {
+
+    width: 310px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+li {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid var(--ye-back);
+    border-radius: 4px;
+}
+
+li:hover {
+    /* color: var(--ye-text); */
+    background-color: var(--ye-back);
+    background-color: rgb(179, 255, 179);
+}
+
+li span {
+    float: right;
+    margin-top: 8px;
+}
+
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid var(--ye-back);
+}

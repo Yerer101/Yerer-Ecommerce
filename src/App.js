@@ -15,12 +15,11 @@ class App extends Component {
       <Layout>
         <React.Fragment>
           <Routes>
-            <Route element={<ProtectedRoutes />}>
-              <Route path="/Sale" element={<Sale />} />
-              <Route path="/Verifier" element={<Verifier />} />
-            </Route>
-            <Route path="/Buy" element={<Buy />} />
-            <Route path="/" element={<Home />} />
+            <Route element={<ProtectedRoutes />}> </Route>
+            <Route path="/Sale" element={<Sale />} />
+            <Route path="/Verifier" element={<Verifier />} />
+            <Route path="/Home" element={<Home />} />
+            <Route path="/" element={<Buy />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </React.Fragment>
