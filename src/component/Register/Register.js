@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Register.css";
 import { useForm } from "react-hook-form";
+import { Navigate } from "react-router-dom";
+
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
@@ -31,12 +33,17 @@ const Register = () => {
     resolver: yupResolver(validationSchema),
   });
 
+  const [filledIn, setFilledIn] = useState(false);
+
   const onSubmit = (data) => {
     console.log(JSON.stringify(data, null, 2));
+    setFilledIn(true);
     reset();
   };
 
-  return (
+  return filledIn ? (
+    <Navigate to="/verifier" />
+  ) : (
     <div className="register-container">
       <div>
         <h1 className="form-header">Create An Account</h1>

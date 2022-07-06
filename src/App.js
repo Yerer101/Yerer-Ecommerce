@@ -4,8 +4,10 @@ import { Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Buy } from "./pages/Buy";
 import { Sale } from "./pages/Sale";
+import { Verifier } from "./pages/Verifier";
 import { PageNotFound } from "./pages/PageNotFound";
 import Layout from "../src/hoc/Layout/Layout";
+// import ProtectedRoutes from "./ProtectedRoutes";
 
 class App extends Component {
   render() {
@@ -13,8 +15,10 @@ class App extends Component {
       <Layout>
         <React.Fragment>
           <Routes>
-            <Route path="/Buy" element={<Buy />} />
+            {/* <Route element={<ProtectedRoutes />}></Route> */}
             <Route path="/Sale" element={<Sale />} />
+            <Route path="/Verifier" element={<Verifier />} />
+            <Route path="/Buy" element={<Buy />} />
             <Route path="/" element={<Home />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>

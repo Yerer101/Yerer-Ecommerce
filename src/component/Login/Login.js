@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { Navigate } from "react-router-dom";
 import Navbar from "../../hoc/Navbar/Navbar";
 import user from "../database";
+// import ProtectedRoutes from "../../ProtectedRoutes";
 
 export default function Login() {
   const validationSchema = Yup.object().shape({
@@ -16,7 +17,7 @@ export default function Login() {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    // formState: { errors },
   } = useForm({ resolver: yupResolver(validationSchema) });
 
   const [isLoggedIn, setLoggedIn] = useState(false);
@@ -43,7 +44,7 @@ export default function Login() {
   };
 
   return isLoggedIn ? (
-    <Navigate to="sale" />
+    <Navigate to="/sale" />
   ) : (
     <Navbar>
       <form onSubmit={handleSubmit(onSubmit)} className="input-container ">

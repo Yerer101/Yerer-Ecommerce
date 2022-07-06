@@ -1,6 +1,6 @@
 import React from "react";
 import "./ImageSlider.css";
-import images from "../../assets/ecommerce3.jpg";
+import images from "../../assets/ecommerce4.jpg";
 
 const ImageSlider = () => {
   return (
