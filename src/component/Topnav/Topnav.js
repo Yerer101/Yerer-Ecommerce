@@ -2,6 +2,7 @@ import React from "react";
 import "./Topnav.css";
 import { Link } from "react-router-dom";
 import Login from "../Login/Login";
+import TopNavbar from "../../hoc/TopNavbar/TopNavbar";
 
 const Topnav = (props) => {
   const forgotPassword = () => (
@@ -11,10 +12,10 @@ const Topnav = (props) => {
   );
 
   return (
-    <div>
+    <TopNavbar>
       <Login value {...props} />
       <div className="forgotpassword-container">{forgotPassword()}</div>
-    </div>
+    </TopNavbar>
   );
 };
 

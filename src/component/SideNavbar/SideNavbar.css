@@ -1,0 +1,42 @@
+.nav-items {
+    background-color: var(--ye-back);
+    width: 270px;
+    height: 100vh;
+    position: fixed;
+    top: 50px;
+    left: -100%;
+    transition: 850ms;
+}
+
+.nav-items.active {
+    left: 0;
+    transition: 350ms;
+}
+
+.nav-close {
+    color: var(--ye-text);
+    width: 100%;
+    font-size: 25px;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+@media only screen and (min-width: 1024px) {
+    .nav-items {
+        background-color: var(--ye-back);
+        padding-top: 10px;
+        width: 270px;
+        height: 100vh;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    .nav-close {
+        display: none;
+    }
+}

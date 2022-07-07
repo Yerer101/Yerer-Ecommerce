@@ -1,8 +1,8 @@
 import React from "react";
-import "./Navbar.css";
+import "./TopNavbar.css";
 
-const Navbar = (props) => {
+const TopNavbar = (props) => {
   return <div className="navbar-container">{props.children}</div>;
 };
 
-export default Navbar;
+export default TopNavbar;

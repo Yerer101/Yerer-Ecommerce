@@ -4,7 +4,6 @@ import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { Navigate } from "react-router-dom";
-import Navbar from "../../hoc/Navbar/Navbar";
 import user from "../database";
 // import ProtectedRoutes from "../../ProtectedRoutes";
 
@@ -46,7 +45,7 @@ const Login = (props) => {
   return isLoggedIn ? (
     <Navigate to="/sale" />
   ) : (
-    <Navbar>
+    <div>
       <form onSubmit={handleSubmit(onSubmit)} className="input-container ">
         <div className="form">
           <div className="input-userName">
@@ -78,7 +77,7 @@ const Login = (props) => {
           </div>
         </div>
       </form>
-    </Navbar>
+    </div>
   );
 };
 

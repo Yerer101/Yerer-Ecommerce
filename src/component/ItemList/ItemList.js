@@ -1,19 +1,18 @@
 import React from "react";
-import List from "./List";
+import ListData from "./ItemListData";
 import "./ItemList.css";
-import ItemListTemplate from "./ItemListTemplate";
 
-const ItemList = () => {
-  const itemList = List.map((item, index) => {
-    // return <ItemListTemplate key={index} value={item.name} />;
+const ItemList = (props) => {
+  const itemList = ListData.map((item, index) => {
     return (
-      <div key={index}>
-        <ItemListTemplate values={item} />
-      </div>
+      <li key={index} className="item-list" onClick={props.clicked}>
+        {item.name}
+        <span className="arrow-down"></span>
+      </li>
     );
   });
 
-  return <div>{itemList}</div>;
+  return <ul className="item-container">{itemList}</ul>;
 };
 
 export default ItemList;

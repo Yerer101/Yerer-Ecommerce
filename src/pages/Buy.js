@@ -1,44 +1,35 @@
 import React, { useState } from "react";
 import "./style.css";
 import { Navigate } from "react-router-dom";
-import Navbar from "../hoc/Navbar/Navbar";
-import ItemList from "../component/ItemList/ItemList";
-import sidebar from "../assets/sidebar.png";
+import TopNavbar from "../hoc/TopNavbar/TopNavbar";
+import SideNavbar from "../component/SideNavbar/SideNavbar";
+import * as FaIcons from "react-icons/fa";
+import Button from "../hoc/Buttons/Buttons";
 
 export const Buy = () => {
-  const [sell, setSell] = useState(false);
-  const [barClicked, setBarClicked] = useState(false);
+  const [navigateToSell, setNavigateToSell] = useState(false);
+  const [sidebar, setSidebar] = useState(false);
 
   const navigateToHome = () => {
-    setSell(true);
+    setNavigateToSell(true);
   };
 
-  const clickHandler = () => {
-    console.log("e", barClicked);
-    if (barClicked) {
-      setBarClicked(false);
-    } else {
-      setBarClicked(true);
-    }
-  };
+  const showSidebar = () => setSidebar(!sidebar);
 
-  return sell ? (
-    <Navigate to="/home" />
+  return navigateToSell ? (
+    <Navigate to="/Home" />
   ) : (
     <div>
-      <Navbar>
-        <div className="nav-container">
-          <span onClick={() => clickHandler()}>
-            <img src={sidebar} className="images" />
-          </span>
-          <button className=" btn-sell" onClick={() => navigateToHome()}>
-            SELL
-          </button>
+      <TopNavbar>
+        <div className="topnav-container">
+          <FaIcons.FaBars
+            onClick={() => showSidebar()}
+            className="navbar-icon"
+          />
+          <Button type="linkTo" txt="Sell" clicked={navigateToHome} />
         </div>
-      </Navbar>
-      <div className={`itemlist-container ${barClicked}?"show":""`}>
-        <ItemList />
-      </div>
+      </TopNavbar>
+      <SideNavbar sidebar={sidebar} clicked={showSidebar} />
     </div>
   );
 };
