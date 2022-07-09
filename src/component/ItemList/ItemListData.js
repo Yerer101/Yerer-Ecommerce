@@ -1,20 +1,24 @@
 const categoriesList = [
   {
     name: "Electronics",
-    items: ["Phone", "Laptop", "Tablet"],
+    itemList: ["Phone", "Laptop", "Tablet"],
   },
   {
     name: "Cloths",
-    items: ["Girl Cloth", "Boy Cloths", "Guy Cloths", "Women Cloths"],
+    itemList: ["Girl Cloth", "Boy Cloths", "Ppl cloths", "Animal cloths"],
   },
-  {
-    name: "Home",
-    items: ["Girl Cloth", "Boy Cloths", "Guy Cloths", "Women Cloths"],
-  },
-  {
-    name: "Sale",
-    items: ["Girl Cloth", "Boy Cloths", "Guy Cloths", "Women Cloths"],
-  },
+  // {
+  //   name: "Home",
+  //   itemList: ["Big", "apartment", "small"],
+  // },
+  // {
+  //   name: "About",
+  //   itemList: ["About me", "apartment", "small"],
+  // },
 ];
 
 export default categoriesList;
+
+//  <ul className="list-items">
+//    <li key={index}>{item.itemList}</li>
+//  </ul>;

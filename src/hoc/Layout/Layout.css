@@ -1,6 +1,7 @@
 :root {
-  --ye-back: #004466;
   --ye-text: #ffffff;
+  --ye-back: #004466;
+  --yer-back-light: #04547c;
 }
 
 * {
