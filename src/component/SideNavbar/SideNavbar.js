@@ -3,13 +3,13 @@ import ItemList from "../ItemList/ItemList";
 import "./SideNavbar.css";
 import * as AiIcons from "react-icons/ai";
 
-const SideNavbar = (props) => {
+const SideNavbar = ({ sidebar, clicked }) => {
   return (
-    <nav className={props.sidebar ? "nav-items active" : "nav-items"}>
-      <span className="nav-close" onClick={props.clicked}>
+    <nav className={sidebar ? "nav-items active" : "nav-items"}>
+      <span className="nav-close" onClick={clicked}>
         <AiIcons.AiOutlineClose />
       </span>
-      <ItemList clicked={props.clicked} />
+      <ItemList clicked={clicked} />
     </nav>
   );
 };

@@ -5,23 +5,23 @@ import TopNavbar from "../hoc/TopNavbar/TopNavbar";
 import SideNavbar from "../component/SideNavbar/SideNavbar";
 import * as FaIcons from "react-icons/fa";
 import Button from "../hoc/Buttons/Buttons";
+import Backdrop from "../hoc/Backdrop/Backdrop";
 
 export const Buy = () => {
   const [navigateToSell, setNavigateToSell] = useState(false);
   const [sidebar, setSidebar] = useState(false);
 
-  const navigateToHome = () => {
-    setNavigateToSell(true);
-  };
+  const navigateToHome = () => setNavigateToSell((prevState) => !prevState);
 
-  const showSidebar = () => setSidebar(!sidebar);
+  const showSidebar = () => setSidebar((prevState) => !prevState);
 
   return navigateToSell ? (
     <Navigate to="/Home" />
   ) : (
     <div>
+      <Backdrop sidebar={sidebar} closeSidebar={showSidebar} />
       <TopNavbar>
-        <div className="topnav-container">
+        <div className="topnav-buy-container">
           <FaIcons.FaBars
             onClick={() => showSidebar()}
             className="navbar-icon"

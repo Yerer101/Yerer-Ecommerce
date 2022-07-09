@@ -5,7 +5,7 @@ import "./ItemList.css";
 const ItemList = (props) => {
   const itemList = ListData.map((item, index) => {
     return (
-      <li key={index} className="item-list" onClick={props.clicked}>
+      <li key={index} className="item-list">
         {item.name}
         <span className="arrow-down"></span>
       </li>
