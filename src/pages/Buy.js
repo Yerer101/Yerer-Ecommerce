@@ -20,6 +20,7 @@ export const Buy = () => {
     <Navigate to="/Home" />
   ) : (
     <div>
+      {/* <div className={sidebar ? "overlay" : ""}></div> */}
       <TopNavbar>
         <div className="topnav-container">
           <FaIcons.FaBars
