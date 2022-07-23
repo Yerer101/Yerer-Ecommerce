@@ -3,32 +3,24 @@ import ListData from "./ItemListData";
 import "./ItemList.css";
 
 const ItemList = () => {
-  const [showList, setShowList] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
 
-  const showItemList = () => setShowList((prevState) => !prevState);
-
+  const showDropdown = (e) => {
+    setDropdown((prevState) => !prevState);
+  };
   const itemLists = ListData.map((item, index) => {
     return (
-      <div key={index}>
-        <ul className="btn-dropdownContainer">
-          <li className="dropdown-list" onClick={() => showItemList()}>
-            {item.name}
-            <span className="dropdown-arrow"></span>
-          </li>
-        </ul>
-
-        <ul
-          className={
-            showList ? "dropdown-container show" : "dropdown-container"
-          }
-        >
+      <ul className="dropdown-container" key={index}>
+        <li onClick={() => showDropdown()}>
+          {item.name}
+          <span className="dropdown-arrow"></span>
+        </li>
+        <ul className={dropdown ? "dropdown show" : "dropdown"}>
           {item.itemList.map((list, i) => (
-            <li className="dropdown-item" key={i}>
-              {list}
-            </li>
+            <li key={i}>{list}</li>
           ))}
         </ul>
-      </div>
+      </ul>
     );
   });
 

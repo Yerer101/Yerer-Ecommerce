@@ -8,7 +8,6 @@
     transition: 850ms;
 }
 
-
 .nav-items.active {
     left: 0;
     transition: 350ms;

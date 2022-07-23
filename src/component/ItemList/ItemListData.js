@@ -3,10 +3,10 @@ const categoriesList = [
     name: "Electronics",
     itemList: ["Phone", "Laptop", "Tablet"],
   },
-  {
-    name: "Cloths",
-    itemList: ["Girl Cloth", "Boy Cloths", "Ppl cloths", "Animal cloths"],
-  },
+  // {
+  //   name: "Cloths",
+  //   itemList: ["Girl Cloth", "Boy Cloths", "Ppl cloths"],
+  // },
   // {
   //   name: "Home",
   //   itemList: ["Big", "apartment", "small"],
